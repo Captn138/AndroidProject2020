@@ -1,8 +1,11 @@
 package com.mobileprogramming.td3;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,11 +22,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         // each data item is just a string in this case
         TextView txtHeader;
         TextView txtFooter;
+        ImageView icon;
         View layout;
 
         ViewHolder(View v) {
             super(v);
             layout = v;
+            icon = (ImageView) v.findViewById(R.id.icon);
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
@@ -68,10 +73,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);
+
             }
         });
-
+        holder.icon.setImageResource(R.drawable.logo);
+//        holder.icon.setImageResource("@drawable/" + item.getIcon());  //ICI
         holder.txtFooter.setText("minecraft:" + item.getTextType());
     }
 

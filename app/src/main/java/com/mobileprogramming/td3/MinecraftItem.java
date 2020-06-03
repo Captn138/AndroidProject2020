@@ -1,5 +1,7 @@
 package com.mobileprogramming.td3;
 
+import android.graphics.drawable.Drawable;
+
 public class MinecraftItem {
 
     private int type;
@@ -21,5 +23,9 @@ public class MinecraftItem {
 
     public String getTextType() {
         return text_type;
+    }
+
+    public Drawable getIcon() {
+        return null;
     }
 }
