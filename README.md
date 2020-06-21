@@ -36,5 +36,6 @@ Le premier écran est un splash screen, c'est un écran qui permet d'afficher un
 ### Deuxième écran
 Le deuxième écran est celui sur lequel on voit notre liste d'éléments.
 ![liste](https://i.imgur.com/r2WaYb3.png)
-### Le troisième écran est celui sur lequel on peut voir des détails sur l'objet. *Item name* est le nom de l'objet, *under the set* est le type d'objet dont est dérivé l'objet sélectionné et *Minecraft item name* est le nom de l'objet pour le système, composé de som parent et d'un champ supplémentaire appelé *meta*.
+### Troisième écran
+Le troisième écran est celui sur lequel on peut voir des détails sur l'objet. *Item name* est le nom de l'objet, *under the set* est le type d'objet dont est dérivé l'objet sélectionné et *Minecraft item name* est le nom de l'objet pour le système, composé de som parent et d'un champ supplémentaire appelé *meta*.
 ![details](https://i.imgur.com/dJcUggS.png)
