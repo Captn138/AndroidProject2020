@@ -7,7 +7,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface MinecraftInterface {
+public interface MinecraftApi {
     @GET("items.json")
     Call<List<MinecraftItem>> getMinecraftItem();
 }

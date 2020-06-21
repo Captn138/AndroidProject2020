@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.mobileprogramming.project.R;
+import com.mobileprogramming.project.data.MinecraftApi;
+import com.mobileprogramming.project.data.MinecraftRepository;
 import com.mobileprogramming.project.presentation.Singletons;
 import com.mobileprogramming.project.presentation.controller.MainController;
 import com.mobileprogramming.project.presentation.Constants;
@@ -28,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        controller = new MainController(this, Singletons.getGson(), Singletons.getSharedPreferences(getApplicationContext()));
+        controller = new MainController(this, new MinecraftRepository(Singletons.getMinecraftInterface(), Singletons.getSharedPreferences(MainActivity.this), Singletons.getGson()));
+        controller.onStart();
     }
 
     public void showList(List<MinecraftItem> list) {
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, Constants.getERROR(), Toast.LENGTH_LONG).show();
     }
 
-    public void nevigateToDetails(MinecraftItem item) {
+    public void navigateToDetails(MinecraftItem item) {
         Intent myIntent = new Intent(getApplicationContext(), DetailActivity.class);
         myIntent.putExtra("MinecraftItemKey", Singletons.getGson().toJson(item));
         MainActivity.this.startActivity(myIntent);
