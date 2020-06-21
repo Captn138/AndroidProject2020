@@ -70,4 +70,8 @@ public class MainController {
             return gson.fromJson(stringminecraft, listType);
         }
     }
+
+    public void onItemClick(MinecraftItem item) {
+        view.nevigateToDetails(item);
+    }
 }

@@ -15,6 +15,11 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<MinecraftItem> values;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(MinecraftItem item);
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -46,8 +51,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<MinecraftItem> myDataset) {
-        values = myDataset;
+    public ListAdapter(List<MinecraftItem> values, OnItemClickListener listener) {
+        this.values = values;
+        this.listener = listener;
     }
 
     // Create new views (invoked by the layout manager)
@@ -64,22 +70,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
         final MinecraftItem item = values.get(position);
         holder.txtHeader.setText(item.getName());
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         holder.icon.setImageResource(R.drawable.logo);
 //        holder.icon.setImageResource("@drawable/" + item.getIcon());  //ICI
         holder.txtFooter.setText("minecraft:" + item.getTextType());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(item);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

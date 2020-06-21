@@ -5,6 +5,7 @@ public class Constants {
     private static String NAME_SHARED_PREFS = "minecraftList";
     private static String API_URL = "https://minecraft-ids.grahamedgecombe.com/";
     private static String ERROR = "Api Error!";
+    private static String TEST = "Elle est où la poulette?";
 
     public static String getKEY_MINECRAFT_LIST() {
         return KEY_MINECRAFT_LIST;
@@ -21,4 +22,6 @@ public class Constants {
     public static String getERROR() {
         return ERROR;
     }
+
+    public static String getTEST() { return TEST; }
 }
