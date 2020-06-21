@@ -5,27 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import com.mobileprogramming.project.R;
-import com.mobileprogramming.project.data.MinecraftInterface;
+import com.mobileprogramming.project.presentation.Singletons;
 import com.mobileprogramming.project.presentation.controller.MainController;
-import com.mobileprogramming.project.presentation.model.Constants;
+import com.mobileprogramming.project.presentation.Constants;
 import com.mobileprogramming.project.presentation.model.MinecraftItem;
 
-import java.lang.reflect.Type;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MainController controller = new MainController(this, new GsonBuilder().setLenient().create(), getSharedPreferences(Constants.getNAME_SHARED_PREFS(), Context.MODE_PRIVATE));
+        MainController controller = new MainController(this, Singletons.getGson(), Singletons.getSharedPreferences(getApplicationContext()));
     }
 
     public void showList(List<MinecraftItem> list) {

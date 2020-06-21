@@ -1,13 +1,11 @@
 package com.mobileprogramming.project.presentation.controller;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.mobileprogramming.project.data.MinecraftInterface;
-import com.mobileprogramming.project.presentation.model.Constants;
+import com.mobileprogramming.project.presentation.Constants;
+import com.mobileprogramming.project.presentation.Singletons;
 import com.mobileprogramming.project.presentation.model.MinecraftItem;
 import com.mobileprogramming.project.presentation.view.MainActivity;
 
@@ -17,12 +15,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
-    private static final String BASE_URL = Constants.getAPI_URL();
     private MainActivity view;
     private SharedPreferences sharedpreferences;
     private Gson gson;
@@ -40,14 +35,8 @@ public class MainController {
     }
 
     private void makeApiCall(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
 
-        MinecraftInterface mcapi = retrofit.create(MinecraftInterface.class);
-
-        Call<List<MinecraftItem>> call = mcapi.getMinecraftItem();
+        Call<List<MinecraftItem>> call = Singletons.getMinecraftInterface().getMinecraftItem();
         call.enqueue(new Callback<List<MinecraftItem>>() {
             @Override
             public void onResponse(Call<List<MinecraftItem>> call, Response<List<MinecraftItem>> response) {
