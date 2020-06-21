@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nevigateToDetails(MinecraftItem item) {
-        Toast.makeText(this, Constants.getTEST(), Toast.LENGTH_LONG).show();
+        Intent myIntent = new Intent(getApplicationContext(), DetailActivity.class);
+        myIntent.putExtra("MinecraftItemKey", Singletons.getGson().toJson(item));
+        MainActivity.this.startActivity(myIntent);
     }
 }
