@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mobileprogramming.project.presentation.Constants;
+import com.mobileprogramming.project.Constants;
 import com.mobileprogramming.project.presentation.model.MinecraftItem;
 
 import java.lang.reflect.Type;

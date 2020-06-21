@@ -1,4 +1,4 @@
-package com.mobileprogramming.project.presentation;
+package com.mobileprogramming.project;
 
 public class Constants {
     private static String KEY_MINECRAFT_LIST = "jsonMinecraftList";

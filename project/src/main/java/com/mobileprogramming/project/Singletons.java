@@ -1,10 +1,11 @@
-package com.mobileprogramming.project.presentation;
+package com.mobileprogramming.project;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.mobileprogramming.project.Constants;
 import com.mobileprogramming.project.data.MinecraftApi;
 
 import retrofit2.Retrofit;

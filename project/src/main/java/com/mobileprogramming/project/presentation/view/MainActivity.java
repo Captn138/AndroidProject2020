@@ -9,11 +9,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.mobileprogramming.project.R;
-import com.mobileprogramming.project.data.MinecraftApi;
 import com.mobileprogramming.project.data.MinecraftRepository;
-import com.mobileprogramming.project.presentation.Singletons;
+import com.mobileprogramming.project.Singletons;
 import com.mobileprogramming.project.presentation.controller.MainController;
-import com.mobileprogramming.project.presentation.Constants;
+import com.mobileprogramming.project.Constants;
 import com.mobileprogramming.project.presentation.model.MinecraftItem;
 
 import java.util.List;

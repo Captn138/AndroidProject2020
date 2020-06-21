@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mobileprogramming.project.R;
-import com.mobileprogramming.project.presentation.Singletons;
+import com.mobileprogramming.project.Singletons;
 import com.mobileprogramming.project.presentation.model.MinecraftItem;
 import com.squareup.picasso.Picasso;
 
