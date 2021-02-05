@@ -14,10 +14,8 @@ implementation 'com.squareup.retrofit2:retrofit:2.6.0'
 implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
 implementation 'com.squareup.picasso:picasso:2.71828'
 ```
-Pour tester l'application sur un téléphone Android, on peut télécharger et installer l'apk de l'application ici (en deux parties, à décompresser).
+Pour tester l'application sur un téléphone Android, on peut télécharger et installer l'apk de l'application [ici](https://github.com/Captn138/Minecraft-List/releases/latest).
 
-[Partie 1](https://github.com/Captn138/AndroidProject2020/raw/master/minecraft_items_list.zip)
-[Partie 2](https://github.com/Captn138/AndroidProject2020/raw/master/minecraft_items_list.z01)
 ## Consignes respectées
 * Nombre d'activités minimales
 * Affichage d'une liste
